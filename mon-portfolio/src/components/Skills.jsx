@@ -15,7 +15,7 @@ function Skills() {
     <section id="skills" className="skills">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">💻 Compétences</span>
+          <span className="section-tag">Compétences</span>
           <h2>Mes technologies</h2>
           <p>Les outils et technologies que j'utilise</p>
         </div>

@@ -16,7 +16,7 @@ function About() {
             borderRadius: '50px',
             color: '#ff6b35',
             marginBottom: '15px'
-          }}>✨ À propos de moi</span>
+          }}>À propos de moi</span>
           <h2 style={{
             fontSize: '2.5rem',
             marginBottom: '15px',

@@ -25,7 +25,7 @@ function Hero() {
             borderRadius: '50px',
             color: '#ff6b35'
           }}>
-            ✨ Bienvenue sur mon portfolio
+            Bienvenue sur mon portfolio
           </span>
         </div>
         
@@ -94,7 +94,7 @@ function Hero() {
           <a href="https://github.com/friedeee" style={{ color: '#b0b0b0', fontSize: '1.5rem' }}><FaGithub /></a>
           <a href="https://www.linkedin.com/in/friedeee-boton-446b1a3b7/" style={{ color: '#b0b0b0', fontSize: '1.5rem' }}><FaLinkedin /></a>
           {/* <a href="#" style={{ color: '#b0b0b0', fontSize: '1.5rem' }}><FaTwitter /></a> */}
-          <a href="#" style={{ color: '#b0b0b0', fontSize: '1.5rem' }}><FaInstagram /></a>
+          <a href="https://www.instagram.com/elle200207?igsh=eWNpbzg4N3N3cW9m" style={{ color: '#b0b0b0', fontSize: '1.5rem' }}><FaInstagram /></a>
         </div>
       </div>
     </section>

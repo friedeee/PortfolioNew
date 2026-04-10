@@ -33,7 +33,7 @@ function Contact() {
             borderRadius: '50px',
             color: '#ff6b35',
             marginBottom: '15px'
-          }}>📬 Me contacter</span>
+          }}>Me contacter</span>
           <h2 style={{
             fontSize: '2.5rem',
             marginBottom: '15px',
@@ -69,7 +69,7 @@ function Contact() {
               <FaPhone style={{ fontSize: '24px', color: '#ff6b35' }} />
               <div>
                 <h4 style={{ color: 'white' }}>Téléphone</h4>
-                <p style={{ color: '#b0b0b0' }}>+229 01 68 59 51 19</p>
+                <p style={{ color: '#b0b0b0' }}>+229 01 68 59 51 19 / +229 01 53 01 83 40</p>
               </div>
             </div>
             

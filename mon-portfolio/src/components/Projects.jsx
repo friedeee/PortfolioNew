@@ -62,7 +62,7 @@ function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-tag">✨ Portfolio</span>
+          <span className="section-tag">Portfolio</span>
           <h2>Mes créations récentes</h2>
           <p>Découvrez une sélection de mes projets favoris</p>
         </motion.div>

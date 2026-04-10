@@ -29,8 +29,8 @@ function Footer() {
             <div className="footer-social">
               <a href="https://github.com/friedeee" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
               <a href="https://www.linkedin.com/in/friedeee-boton-446b1a3b7/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+              {/* <a href="#" target="_blank" rel="noopener noreferrer"><FaTwitter /></a> */}
+              <a href="https://www.instagram.com/elle200207?igsh=eWNpbzg4N3N3cW9m" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             </div>
           </div>
         </div>
