@@ -20,8 +20,8 @@ function Skills() {
           <p>Les outils et technologies que j'utilise</p>
         </div>
         <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill-card">
+          {skills.map((skill) => (
+            <div key={skill.name} className="skill-card">
               <div className="skill-icon">{skill.icon}</div>
               <h3>{skill.name}</h3>
               <div className="skill-bar">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaRocket } from 'react-icons/fa';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ function Header() {
   const navItems = [
     { name: 'Accueil', id: 'accueil' },
     { name: 'À propos', id: 'about' },
-    { name: 'Projets', id: 'projets' },
+    { name: 'Projets', id: 'projects' },
     { name: 'Compétences', id: 'skills' },
     { name: 'Contact', id: 'contact' }
   ];
@@ -33,10 +33,9 @@ function Header() {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <span className="logo-text">PORTFOLIO</span>
-        <div className="logo-dot"></div>
+        <FaRocket className="logo-icon" />
+        <span className="logo-text">BOTON Elfriede</span>
       </div>
-      
       <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
         {navItems.map((item) => (
           <a 

@@ -5,66 +5,86 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const projects = [
   {
     id: 1,
-    title: "E-commerce Luxe",
+    title: "Gestion de Loyer",
     category: "React",
-    description: "Plateforme e-commerce avec panier intelligent et paiement sécurisé",
-    image: "🛍️",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    description: "Application complète de gestion de loyers avec frontend et backend séparés.",
+    image: "🏠",
+    tech: ["React", "Node.js"],
     demo: "#",
-    github: "#"
+    github: "https://github.com/friedeee/GestionDeLoyer"
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    category: "Data Viz",
-    description: "Tableau de bord interactif pour visualisation de données en temps réel",
-    image: "📊",
-    tech: ["Vue.js", "D3.js", "Express", "Socket.io"],
+    title: "Prt-porter",
+    category: "Web",
+    description: "Site de vente de vêtements en ligne avec interface moderne.",
+    image: "👗",
+    tech: ["HTML", "CSS", "JavaScript"],
     demo: "#",
-    github: "#"
+    github: "https://github.com/friedeee/Prt-porter"
   },
   {
     id: 3,
-    title: "Application Mobile",
-    category: "Mobile",
-    description: "App de fitness avec suivi d'activités et challenges sociaux",
-    image: "📱",
-    tech: ["React Native", "Firebase", "Redux"],
+    title: "Quiz App",
+    category: "React",
+    description: "Application de quiz interactive avec score en temps réel.",
+    image: "🧠",
+    tech: ["React", "JavaScript"],
     demo: "#",
-    github: "#"
+    github: "https://github.com/friedeee/Quiz"
   },
   {
     id: 4,
-    title: "Portfolio Artistique",
-    category: "Design",
-    description: "Galerie interactive pour artistes avec animations fluides",
-    image: "🎨",
-    tech: ["Three.js", "GSAP", "WebGL"],
+    title: "Générateur de Reçu",
+    category: "Web",
+    description: "Outil de génération automatique de reçus personnalisés.",
+    image: "🧾",
+    tech: ["JavaScript", "CSS"],
     demo: "#",
-    github: "#"
+    github: "https://github.com/friedeee/generateur_recu"
+  },
+  {
+    id: 5,
+    title: "Carte 3D",
+    category: "Animation",
+    description: "Carte interactive avec effets 3D en CSS pur.",
+    image: "🃏",
+    tech: ["HTML", "CSS", "JavaScript"],
+    demo: "#",
+    github: "https://github.com/friedeee/carte-3D"
+  },
+  {
+    id: 6,
+    title: "Ma Page Personnelle",
+    category: "Web",
+    description: "Ma première page web avec HTML, CSS et JavaScript.",
+    image: "🌐",
+    tech: ["HTML", "CSS", "JavaScript"],
+    demo: "#",
+    github: "https://github.com/friedeee/ma-page-personnelle"
   }
 ];
 
 function Projects() {
   const [filter, setFilter] = useState("all");
-  const categories = ["all", "React", "Data Viz", "Mobile", "Design"];
+  const categories = ["all", "React", "Web", "Animation"];
 
-  const filteredProjects = filter === "all" 
-    ? projects 
+  const filteredProjects = filter === "all"
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
-    <section id="projets" className="projects">
+    <section id="projects" className="projects">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <span className="section-tag">Portfolio</span>
-          <h2>Mes créations récentes</h2>
-          <p>Découvrez une sélection de mes projets favoris</p>
+          <h2>Mes projets</h2>
+          <p>Une sélection de mes réalisations</p>
         </motion.div>
 
         <div className="project-filters">
@@ -74,7 +94,7 @@ function Projects() {
               className={`filter-btn ${filter === cat ? 'active' : ''}`}
               onClick={() => setFilter(cat)}
             >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat === "all" ? "Tous" : cat}
             </button>
           ))}
         </div>
@@ -93,8 +113,14 @@ function Projects() {
                 <div className="project-emoji">{project.image}</div>
                 <div className="project-overlay">
                   <div className="project-links">
-                    <a href={project.github}><FaGithub /></a>
-                    <a href={project.demo}><FaExternalLinkAlt /></a>
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <FaGithub />
+                    </a>
+                    {project.demo !== "#" && (
+                      <a href={project.demo} target="_blank" rel="noreferrer">
+                        <FaExternalLinkAlt />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
