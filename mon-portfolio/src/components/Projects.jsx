@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Prt-porter",
+    title: "Prêt-porter",
     category: "Web",
     description: "Site de vente de vêtements en ligne avec interface moderne.",
     image: "👗",
@@ -62,7 +62,37 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     demo: "#",
     github: "https://github.com/friedeee/ma-page-personnelle"
-  }
+  },
+  {
+  id: 7,
+  title: "Clone Google",
+  category: "Web",
+  description: "Clone de la page d'accueil Google avec barre de recherche et logo multicolore.",
+  image: "🔍",
+  tech: ["HTML", "CSS"],
+  demo: "https://clone-google-eight.vercel.app",
+  github: "https://github.com/friedeee/Clone-Google"
+},
+{
+  id: 8,
+  title: "Clone Netflix",
+  category: "Web",
+  description: "Clone de la page hero Netflix avec image de fond, overlay et boutons stylisés.",
+  image: "🎬",
+  tech: ["HTML", "CSS"],
+  demo: "https://clone-netflix-seven-chi.vercel.app",
+  github: "https://github.com/friedeee/clone-netflix"
+},
+{
+  id: 9,
+  title: "Clone Twitter/X",
+  category: "React",
+  description: "Clone de cards Twitter avec like interactif et compteurs en temps réel.",
+  image: "🐦",
+  tech: ["React", "useState", "CSS"],
+  demo: "https://clone-twitter-opal.vercel.app",
+  github: "https://github.com/friedeee/clone-twitter"
+},
 ];
 
 function Projects() {
