@@ -34,7 +34,7 @@ export const projetsPhares = [
     titre: 'PharmaBenin',
     sousTitre: "Logiciel de gestion d'officine",
     badge: "Projet d'équipe",
-    description: "Logiciel de gestion de pharmacie développé à distance par une équipe de 4 développeurs. Je suis la plus forte contributrice (39 des 85 commits), principalement sur l'interface.",
+    description: "Logiciel de gestion de pharmacie développé à distance par une équipe de 6 développeurs. Je suis la plus forte contributrice du dépôt client (39 des 85 commits), principalement sur l'interface.",
     points: [
       'Tableau de bord, ventes et caisse, stock et inventaires par scan, commandes fournisseurs',
       'Traçabilité des lots, chaîne du froid, registres des stupéfiants, comptabilité SYSCOHADA',
