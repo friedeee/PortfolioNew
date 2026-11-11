@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaRocket } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ function Header() {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <FaRocket className="logo-icon" />
+        <span className="logo-initiales" aria-hidden="true">EB</span>
         <span className="logo-text">BOTON Elfriede</span>
       </div>
       <div className={`nav-menu ${isOpen ? 'active' : ''}`}>

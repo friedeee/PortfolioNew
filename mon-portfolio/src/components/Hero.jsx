@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 function Hero() {
   return (
@@ -18,17 +18,17 @@ function Hero() {
           <h1 className="hero-title">
             <span className="gradient-text">BOTON Kpèdétin Elfriede</span>
             <br />
-            <span className="hero-subtitle">Développeuse Web Junior</span>
+            <span className="hero-subtitle">Développeuse Web Full-Stack · React &amp; Laravel</span>
           </h1>
 
           <p className="hero-description">
-            Je transforme des idées en expériences numériques élégantes.
-            Spécialisée dans la création d'interfaces modernes et responsives.
+            Je conçois des applications web de la maquette jusqu'à la mise en ligne,
+            avec des interfaces modernes et responsives, pensées pour ceux qui les utilisent.
           </p>
 
           <div className="hero-info">
-            <span>📍 Cotonou, Bénin</span>
-            <span>📧 botonkpdt@gmail.com</span>
+            <span><FaMapMarkerAlt className="hero-info-icon" aria-hidden="true" /> Cotonou, Bénin</span>
+            <span><FaEnvelope className="hero-info-icon" aria-hidden="true" /> botonkpdt@gmail.com</span>
           </div>
 
           <div className="hero-buttons">

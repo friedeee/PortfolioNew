@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaArrowUp, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaArrowUp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,9 +15,10 @@ function Footer() {
         <div className="footer-grid">
           <div>
             <h3 className="footer-title">BOTON Kpèdétin Elfriede</h3>
-            <p className="footer-subtitle">Développeuse Web Junior</p>
+            <p className="footer-subtitle">Développeuse Web Full-Stack · React &amp; Laravel</p>
             <p className="footer-subtitle" style={{ marginTop: '8px' }}>
-              📍 Cotonou, Bénin
+              <FaMapMarkerAlt style={{ marginRight: '8px', color: '#ff6b35' }} aria-hidden="true" />
+              Cotonou, Bénin
             </p>
           </div>
 

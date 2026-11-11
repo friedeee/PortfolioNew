@@ -42,7 +42,7 @@ function About() {
                 <FaCode className="skill-icon" />
                 <div>
                   <h4>Frontend</h4>
-                  <p>React, HTML5, CSS3, JavaScript</p>
+                  <p>React, Next.js, JavaScript, TypeScript, Tailwind CSS</p>
                 </div>
               </div>
               <div className="skill-item">
@@ -56,7 +56,7 @@ function About() {
                 <FaRocket className="skill-icon" />
                 <div>
                   <h4>Backend</h4>
-                  <p>Node.js, MongoDB</p>
+                  <p>PHP, Laravel, Node.js, Express, MySQL</p>
                 </div>
               </div>
             </div>
