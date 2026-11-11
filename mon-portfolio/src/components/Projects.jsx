@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaCheck } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaCheck, FaLock } from 'react-icons/fa';
 import { projetsPhares, projets } from '../donnees';
 
 const visible = {
@@ -31,9 +31,13 @@ function Liens({ projet }) {
           Voir en ligne <FaExternalLinkAlt aria-hidden="true" />
         </a>
       )}
-      <a href={projet.github} target="_blank" rel="noreferrer" className="bouton bouton-contour bouton-petit">
-        <FaGithub aria-hidden="true" /> Code
-      </a>
+      {projet.github ? (
+        <a href={projet.github} target="_blank" rel="noreferrer" className="bouton bouton-contour bouton-petit">
+          <FaGithub aria-hidden="true" /> Code
+        </a>
+      ) : (
+        <span className="code-prive"><FaLock aria-hidden="true" /> Code privé (projet d'équipe)</span>
+      )}
     </div>
   );
 }
@@ -51,7 +55,7 @@ function Projects() {
         <motion.div className="section-entete" {...visible}>
           <p className="sur-titre">Projets</p>
           <h2>Ce que j'ai construit</h2>
-          <p className="texte-doux">Deux projets dont je suis fière, puis une sélection de mes réalisations.</p>
+          <p className="texte-doux">Trois projets dont je suis fière, puis une sélection de mes réalisations.</p>
         </motion.div>
 
         <div className="phares">
@@ -59,7 +63,7 @@ function Projects() {
             <motion.article key={p.id} className={`carte phare ${i % 2 ? 'phare-inverse' : ''}`} {...visible}>
               <Apercu projet={p} grand />
               <div className="phare-texte">
-                <span className="badge-phare">Projet phare</span>
+                <span className="badge-phare">{p.badge || 'Projet phare'}</span>
                 <h3>{p.titre}</h3>
                 <p className="phare-sous-titre">{p.sousTitre}</p>
                 <p className="texte-doux">{p.description}</p>

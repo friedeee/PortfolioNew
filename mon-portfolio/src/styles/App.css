@@ -1223,3 +1223,15 @@ h3 {
     scroll-behavior: auto !important;
   }
 }
+
+.code-prive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px dashed var(--ligne);
+  color: var(--texte-doux);
+  font-size: 0.88rem;
+}

@@ -5,7 +5,7 @@
  */
 import {
   FaTint, FaStore, FaFeatherAlt, FaHome, FaTshirt, FaBrain, FaReceipt, FaCube, FaGlobe,
-  FaSearch, FaFilm, FaTwitter, FaAirbnb, FaSpotify, FaWhatsapp, FaInstagram, FaPenNib, FaAddressBook,
+  FaSearch, FaFilm, FaTwitter, FaClinicMedical, FaAirbnb, FaSpotify, FaWhatsapp, FaInstagram, FaPenNib, FaAddressBook,
   FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaJs, FaGitAlt, FaGithub, FaDocker, FaPhp, FaLaravel, FaFigma, FaVuejs, FaBootstrap,
 } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiMysql, SiTypescript, SiVercel, SiExpress, SiGitlab } from 'react-icons/si';
@@ -29,6 +29,23 @@ export const chiffres = [
 ];
 
 export const projetsPhares = [
+  {
+    id: 'pharmabenin',
+    titre: 'PharmaBenin',
+    sousTitre: "Logiciel de gestion d'officine",
+    badge: "Projet d'équipe",
+    description: "Logiciel de gestion de pharmacie développé à distance par une équipe de 4 développeurs. Je suis la plus forte contributrice (39 des 85 commits), principalement sur l'interface.",
+    points: [
+      'Tableau de bord, ventes et caisse, stock et inventaires par scan, commandes fournisseurs',
+      'Traçabilité des lots, chaîne du froid, registres des stupéfiants, comptabilité SYSCOHADA',
+      'Travail en équipe sur GitLab : branches, fusions et coordination à distance',
+    ],
+    image: null,
+    icone: FaClinicMedical,
+    tech: ['Laravel', 'React', 'Inertia.js', 'Tailwind CSS', 'Recharts', 'GitLab'],
+    demo: null,
+    github: null,
+  },
   {
     id: 'amivovo',
     titre: 'Amì vɔ̀vɔ̀',
