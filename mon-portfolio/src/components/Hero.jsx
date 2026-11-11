@@ -1,57 +1,77 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaArrowRight, FaDownload, FaReact, FaLaravel } from 'react-icons/fa';
+import { contact, chiffres } from '../donnees';
+
+const apparition = (delai) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay: delai, ease: [0.22, 1, 0.36, 1] },
+});
 
 function Hero() {
+  const aller = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
   return (
-    <section className="hero">
-      <div className="hero-container">
-
-        <div className="hero-image">
-          <img src="/Photopro.png" alt="Elfriede BOTON" />
-        </div>
-
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span className="badge">Disponible immédiatement</span>
-          </div>
-
-          <h1 className="hero-title">
-            <span className="gradient-text">BOTON Kpèdétin Elfriede</span>
-            <br />
-            <span className="hero-subtitle">Développeuse Web Full-Stack · React &amp; Laravel</span>
-          </h1>
-
-          <p className="hero-description">
-            Je conçois des applications web de la maquette jusqu'à la mise en ligne,
-            avec des interfaces modernes et responsives, pensées pour ceux qui les utilisent.
-          </p>
-
-          <div className="hero-info">
-            <span><FaMapMarkerAlt className="hero-info-icon" aria-hidden="true" /> Cotonou, Bénin</span>
-            <span><FaEnvelope className="hero-info-icon" aria-hidden="true" /> botonkpdt@gmail.com</span>
-          </div>
-
-          <div className="hero-buttons">
-            <button className="btn-primary"
-              onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
-              Voir mes projets
+    <section id="accueil" className="heros">
+      <div className="heros-lueur heros-lueur-1" aria-hidden="true" />
+      <div className="heros-lueur heros-lueur-2" aria-hidden="true" />
+      <div className="conteneur heros-grille">
+        <div className="heros-texte">
+          <motion.p className="disponible" {...apparition(0)}>
+            <span className="point-vert" aria-hidden="true" /> Disponible pour un poste ou une mission
+          </motion.p>
+          <motion.h1 {...apparition(0.1)}>
+            Bonjour, je suis <span className="degrade">Elfriede</span>.<br />
+            Je construis des applications web <em>utiles</em>.
+          </motion.h1>
+          <motion.p className="heros-intro" {...apparition(0.2)}>
+            Développeuse web full-stack <b>React &amp; Laravel</b> à Cotonou. Je conçois des applications
+            de la maquette jusqu'à la mise en ligne, pensées pour ceux qui les utilisent : sur téléphone,
+            avec WhatsApp, et même sans Internet.
+          </motion.p>
+          <motion.div className="heros-actions" {...apparition(0.3)}>
+            <button type="button" className="bouton bouton-plein" onClick={() => aller('projects')}>
+              Voir mes projets <FaArrowRight aria-hidden="true" />
             </button>
-            <button className="btn-secondary"
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
-              Me contacter
-            </button>
-            <a href="/CV_BOTON_Kpèdétin_Elfriede.pdf" download="CV_BOTON_Kpèdétin_Elfriede.pdf" className="btn-cv">
-              Télécharger mon CV
+            <a href={contact.cv} download className="bouton bouton-contour">
+              <FaDownload aria-hidden="true" /> Télécharger mon CV
             </a>
-          </div>
-
-          <div className="social-links">
-            <a href="https://github.com/friedeee" target="_blank" rel="noreferrer"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/friedeee-boton-446b1a3b7/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-            <a href="https://www.instagram.com/elle200207" target="_blank" rel="noreferrer"><FaInstagram /></a>
-          </div>
+          </motion.div>
+          <motion.div className="heros-bas" {...apparition(0.4)}>
+            <span className="heros-lieu"><FaMapMarkerAlt aria-hidden="true" /> {contact.ville}</span>
+            <span className="reseaux">
+              <a href={contact.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+              <a href={contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+              <a href={contact.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            </span>
+          </motion.div>
         </div>
 
+        <motion.div
+          className="heros-photo"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="photo-cadre">
+            <img src="/Photopro.png" alt="Elfriede BOTON" />
+          </div>
+          <motion.span className="pastille pastille-1" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity }}>
+            <FaReact aria-hidden="true" /> React
+          </motion.span>
+          <motion.span className="pastille pastille-2" animate={{ y: [0, 10, 0] }} transition={{ duration: 6, repeat: Infinity }}>
+            <FaLaravel aria-hidden="true" /> Laravel
+          </motion.span>
+        </motion.div>
+      </div>
+
+      <div className="conteneur">
+        <motion.ul className="chiffres" {...apparition(0.5)}>
+          {chiffres.map((c) => (
+            <li key={c.libelle}><b>{c.valeur}</b><span>{c.libelle}</span></li>
+          ))}
+        </motion.ul>
       </div>
     </section>
   );

@@ -1,60 +1,27 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaArrowUp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaArrowUp } from 'react-icons/fa';
+import { contact } from '../donnees';
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="footer">
-      <div className="footer-container">
-
-        <div className="footer-grid">
-          <div>
-            <h3 className="footer-title">BOTON Kpèdétin Elfriede</h3>
-            <p className="footer-subtitle">Développeuse Web Full-Stack · React &amp; Laravel</p>
-            <p className="footer-subtitle" style={{ marginTop: '8px' }}>
-              <FaMapMarkerAlt style={{ marginRight: '8px', color: '#ff6b35' }} aria-hidden="true" />
-              Cotonou, Bénin
-            </p>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Navigation</h4>
-            <ul className="footer-nav">
-              <li><a href="#about">À propos</a></li>
-              <li><a href="#projects">Projets</a></li>
-              <li><a href="#skills">Compétences</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-heading">Contact</h4>
-            <p className="footer-subtitle">
-              <FaEnvelope style={{ marginRight: '8px', color: '#ff6b35' }} />
-              botonkpdt@gmail.com
-            </p>
-            <h4 className="footer-heading" style={{ marginTop: '20px' }}>Suivez-moi</h4>
-            <div className="footer-social">
-              <a href="https://github.com/friedeee" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-              <a href="https://www.linkedin.com/in/friedeee-boton-446b1a3b7/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              <a href="https://www.instagram.com/elle200207" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            </div>
-          </div>
+    <footer className="pied">
+      <div className="conteneur pied-ligne">
+        <div>
+          <p className="logo"><span className="logo-initiales" aria-hidden="true">EB</span> BOTON Kpèdétin Elfriede</p>
+          <p className="texte-doux">Développeuse web full-stack · React &amp; Laravel · {contact.ville}</p>
         </div>
-
-        <div className="footer-bottom">
-          <p>© {currentYear} BOTON Kpèdétin Elfriede — Tous droits réservés.</p>
-          <button onClick={scrollToTop} className="scroll-top-btn">
+        <div className="pied-droite">
+          <span className="reseaux">
+            <a href={contact.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href={contact.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+          </span>
+          <button type="button" className="haut" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Revenir en haut">
             <FaArrowUp />
           </button>
         </div>
-
       </div>
+      <p className="conteneur pied-bas texte-doux">© {new Date().getFullYear()} BOTON Kpèdétin Elfriede. Tous droits réservés.</p>
     </footer>
   );
 }

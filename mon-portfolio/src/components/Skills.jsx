@@ -1,41 +1,39 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaJs, FaGitAlt, FaGithub, FaDocker, FaPhp, FaLaravel, FaFigma } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiMysql, SiTypescript, SiVercel } from 'react-icons/si';
-
-const skills = [
-  { name: 'React', icon: <FaReact /> },
-  { name: 'Next.js', icon: <SiNextdotjs /> },
-  { name: 'JavaScript', icon: <FaJs /> },
-  { name: 'TypeScript', icon: <SiTypescript /> },
-  { name: 'HTML5', icon: <FaHtml5 /> },
-  { name: 'CSS3', icon: <FaCss3Alt /> },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-  { name: 'PHP', icon: <FaPhp /> },
-  { name: 'Laravel', icon: <FaLaravel /> },
-  { name: 'Node.js', icon: <FaNodeJs /> },
-  { name: 'MySQL', icon: <SiMysql /> },
-  { name: 'Git', icon: <FaGitAlt /> },
-  { name: 'GitHub', icon: <FaGithub /> },
-  { name: 'Docker', icon: <FaDocker /> },
-  { name: 'Vercel', icon: <SiVercel /> },
-  { name: 'Figma', icon: <FaFigma /> },
-];
+import { motion } from 'framer-motion';
+import { competences } from '../donnees';
 
 function Skills() {
   return (
-    <section id="skills" className="skills">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Compétences</span>
-          <h2>Mes technologies</h2>
-          <p>Les outils et technologies que j'utilise</p>
-        </div>
-        <div className="skills-grid">
-          {skills.map((skill) => (
-            <div key={skill.name} className="skill-card">
-              <div className="skill-icon">{skill.icon}</div>
-              <h3>{skill.name}</h3>
-            </div>
+    <section id="skills" className="section section-teintee">
+      <div className="conteneur">
+        <motion.div
+          className="section-entete"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="sur-titre">Compétences</p>
+          <h2>Mes outils de travail</h2>
+        </motion.div>
+        <div className="grille-competences">
+          {competences.map((g, i) => (
+            <motion.article
+              key={g.groupe}
+              className="carte competence"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
+              <h3>{g.groupe}</h3>
+              <p className="texte-doux">{g.texte}</p>
+              <ul className="techno-liste">
+                {g.items.map((t) => (
+                  <li key={t.nom}><t.icone aria-hidden="true" /> {t.nom}</li>
+                ))}
+              </ul>
+            </motion.article>
           ))}
         </div>
       </div>
